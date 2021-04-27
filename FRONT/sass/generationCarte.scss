@@ -11,8 +11,27 @@ $dimensionCarte : 100px; //La carte étant un carré, toutes les dimensions sont
         #carte-#{$j}#{$i} {
             background-image: url($lienImage);
             background-position: 0 $i*$dimensionCarte; //On se déplace dans l'image pour récupérer un item
-            width : $dimensionCarte;
-            height: $dimensionCarte;
         }
     }
 }
+
+.carte{
+    width : $dimensionCarte;
+    height: $dimensionCarte;
+    margin: 15px;
+    &-recto{
+        background-color: orange;
+    
+        &:hover{
+            background-color: orangered;
+            cursor: pointer;
+        }
+    }
+    &-recto, &-verso{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+

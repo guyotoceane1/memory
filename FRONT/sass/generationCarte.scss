@@ -1,0 +1,18 @@
+//Le but de ce fichier est de pouvoir générer toutes les images à partir d'une seule image. Pour cela on va utiliser une boucle afin d'avoir un code simple et maintenable facilement en cas de changement d'image, ou de nombre de carte
+
+$lienImage : '../images/cartes.png';
+
+$nbPaire : 18; //Nombre de paires que l'on souhaite pour jouer
+
+$dimensionCarte : 100px; //La carte étant un carré, toutes les dimensions sont les mêmes, autant ne l'avoir qu'une fois en cas de modifications
+
+@for $i from 1 through $nbPaire { // On fait une première boucle sur le nombre de paires pour pouvoir se déplacer dans l'image
+    @for $j from 1 through 2{ // Comme une paire = 2 cartes, on les génère dans une boucle puisque le code sera le même
+        #carte-#{$j}-#{$i} {
+            background-image: url($lienImage);
+            background-position: 0 $i*$dimensionCarte; //On se déplace dans l'image pour récupérer un item
+            width : $dimensionCarte;
+            height: $dimensionCarte;
+        }
+    }
+}

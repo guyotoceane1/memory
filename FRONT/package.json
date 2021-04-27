@@ -4,7 +4,7 @@
   "description": "Partie front end, jeu de memory",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:.public/css/style.css",
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Océane Guyot",

@@ -1,1 +1,6 @@
 @import 'generationCarte';
+
+#cartes{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -8,7 +8,7 @@ $dimensionCarte : 100px; //La carte étant un carré, toutes les dimensions sont
 
 @for $i from 1 through $nbPaire { // On fait une première boucle sur le nombre de paires pour pouvoir se déplacer dans l'image
     @for $j from 1 through 2{ // Comme une paire = 2 cartes, on les génère dans une boucle puisque le code sera le même
-        #carte-#{$j}-#{$i} {
+        #carte-#{$j}#{$i} {
             background-image: url($lienImage);
             background-position: 0 $i*$dimensionCarte; //On se déplace dans l'image pour récupérer un item
             width : $dimensionCarte;

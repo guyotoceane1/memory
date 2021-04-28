@@ -229,4 +229,12 @@
   animation: rotation2 0.3s forwards;
 }
 
+#chronos {
+  width: 100%;
+}
+#chronos__progressbar {
+  height: 10px;
+  background-color: orange;
+}
+
 /*# sourceMappingURL=style.css.map */

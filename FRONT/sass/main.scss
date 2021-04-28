@@ -14,3 +14,12 @@
 .rotate-verso{
     animation: rotation2 0.3s forwards;
 }
+
+
+#chronos{
+    width: 100%;
+    &__progressbar{
+        height: 10px;
+        background-color: orange;
+    }
+}

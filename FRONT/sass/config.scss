@@ -1,0 +1,24 @@
+/***** VARIABLES *****/
+
+
+
+/***** ANIMATIONS *****/
+@keyframes rotation {
+    from{
+        transform: rotate3d(0);
+    }
+    to{
+        transform: rotate3d(0, -1, 0, 180deg);
+    }
+}
+
+
+@keyframes rotation2 {
+    from{
+        transform: rotate3d(0, -1, 0, 180deg);
+    }
+    to{
+        transform: rotate3d(0);
+    }
+}
+

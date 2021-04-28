@@ -1,6 +1,16 @@
+@import 'config';
 @import 'generationCarte';
 
 #cartes{
     display: flex;
     flex-wrap: wrap;
+}
+
+.rotate-recto{
+    animation: rotation 0.3s forwards;
+}
+
+
+.rotate-verso{
+    animation: rotation2 0.3s forwards;
 }

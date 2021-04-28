@@ -14,8 +14,12 @@ tabData = shuffle(tabData); //On randomise les ids pour pouvoir les "mélanger" 
 //On boucle sur le tableau pour afficher les cartes
 tabData.forEach(data=>{
 
-    let $parentCarte = document.createElement('div'); //parent qui va contenir le recto et le verso
-    $($parentCarte).addClass('carte')
+
+    let $container = document.createElement('div'); //Container qui va contenir un cube pour permettre une rotation des cartes visuellement
+
+
+    let $cubeCarte = document.createElement('div'); //parent qui va contenir le recto et le verso
+    $($cubeCarte).addClass('carte')
 
     //Création du recto de la carte - face cachée
     let $recto = document.createElement('div');
@@ -25,13 +29,14 @@ tabData.forEach(data=>{
     let $divPhoto = document.createElement('div');
     $divPhoto.id = data;
     $($divPhoto).addClass('carte-verso');
-    $($divPhoto).hide(); //Par défaut la carte est caché
+    // $($divPhoto).hide(); //Par défaut la carte est caché
 
     // On ajoute les 2 cartes a la div commune
-    $($parentCarte).append($recto);
-    $($parentCarte).append($divPhoto);
+    $($cubeCarte).append($divPhoto);
+    $($cubeCarte).append($recto);
 
-    divAffichageCarte.append($parentCarte) //On affecte la carte a la div parent dans le HTML
+    $container.append($cubeCarte); //On affecte le container a la div parent dans le HTML
+    divAffichageCarte.append($container); //On affecte le container a la div parent dans le HTML
 })
 
 

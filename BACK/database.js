@@ -3,6 +3,7 @@
  */
 const mongoose = require("mongoose");
 const config = require("./config/config");
+const Resultats = require("./schemasData");
 
 class Database {
     constructor() {
@@ -35,6 +36,16 @@ class Database {
 
             return true;
         });
+    }
+
+    saveData(pseudo, temps){
+        const data = new Resultats({
+            pseudo : pseudo,
+            temps : temps
+        });
+        data.save(function(err) {
+            console.log('this fires after the `post` hook');
+          });
     }
 
 }

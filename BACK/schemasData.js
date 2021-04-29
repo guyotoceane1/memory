@@ -6,9 +6,9 @@
  */
 const mongoose = require("mongoose");
 
-const schemas = mongoose.Schema({
+const Resultats = mongoose.Schema({
     pseudo : {type:'string', required:true},
-    temps : {type:'string', required:true},
+    temps : {type:'number', required:true},
 })
 
-module.exports = mongoose.model('Resultats', schemas);
+module.exports = mongoose.model('Resultats', Resultats);

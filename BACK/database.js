@@ -37,15 +37,6 @@ class Database {
         });
     }
 
-    //Structure de donnée pour ce que l'on va sauvegarder en base de données
-    structureDonnee(){
-        let structure = this.mongoose.Schema({
-            pseudo : {type:'string', required:true},
-            temps : {type:'string', required:true},
-        })
-
-        return this.mongoose.model('score', structure)
-    }
 }
 
 module.exports = Database;

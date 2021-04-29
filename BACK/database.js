@@ -1,3 +1,6 @@
+/**
+ * Class pour gérer la base de donnée
+ */
 const mongoose = require("mongoose");
 const config = require("./config/config");
 
@@ -7,6 +10,7 @@ class Database {
         this.config = config;
     }
 
+    //Connexion à la base de données
     connect() {
         let dbUser = encodeURIComponent(this.config.db.username);
         let dbPass = encodeURIComponent(this.config.db.pwd);
@@ -14,7 +18,6 @@ class Database {
         let dbDatabase = this.config.db.database;
 
         let mongoUrl = `mongodb+srv://${dbUser}:${dbPass}@${dbHost}/${dbDatabase}?retryWrites=true&w=majority`;
-        console.log(mongoUrl)
         this.mongoose.connect(mongoUrl,
         { useNewUrlParser: true,
           useUnifiedTopology: true })
@@ -22,6 +25,7 @@ class Database {
         .catch(() => console.log('Connexion à MongoDB échouée !'));
     }
 
+    //Déconnexion de la base de données
     disconnect() {
         this.mongoose.connection.close(function(error) {
             if(error) {
@@ -31,6 +35,16 @@ class Database {
 
             return true;
         });
+    }
+
+    //Structure de donnée pour ce que l'on va sauvegarder en base de données
+    structureDonnee(){
+        let structure = this.mongoose.Schema({
+            pseudo : {type:'string', required:true},
+            temps : {type:'string', required:true},
+        })
+
+        return this.mongoose.model('score', structure)
     }
 }
 

@@ -20,7 +20,8 @@ const config = {
         pwd : "QETwNlYXzrmWTMmH",
         database : "memory",
         host : "memory.mrvjd.mongodb.net",
-    }
+    },
+    port : 3000
 }
 
 module.exports = config;

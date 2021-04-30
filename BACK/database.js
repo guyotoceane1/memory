@@ -1,5 +1,9 @@
 /**
- * Class pour gérer la base de donnée
+ * Class pour gérer la base de donnée,elle contient différentes fonction :
+ *  - la connexion à la bdd
+ *  - la déconnexion (non utilisé ici)
+ *  - l'insertion de données
+ *  - la récupération de donnée
  */
 const mongoose = require("mongoose");
 const config = require("./config/config");
@@ -38,13 +42,17 @@ class Database {
         });
     }
 
+    //Fonction pour sauvegarder la donnée en bdd
     saveData(pseudo, temps){
         const data = new Resultats({
             pseudo : pseudo,
             temps : temps
         });
         data.save(function(err) {
-            console.log('this fires after the `post` hook');
+            if(!err){
+                console.log('Donnée insérer avec succès');
+            } else 
+            console.log(err);
           });
     }
 

@@ -56,6 +56,14 @@ class Database {
           });
     }
 
+    //Fonction pour récupérer la donnée
+    getData(){
+        const schemas = mongoose.model('Resultats'); //On récupère le model qui nous interesse
+        schemas.find({}, function(err, data){
+            console.log(data)
+        })
+    }
+
 }
 
 module.exports = Database;

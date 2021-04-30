@@ -43,7 +43,7 @@ $('.carte').on('click', (e) => {
             if(idCarte1 === idCarte2){ //Les 2 cartes sont égales
                 console.log("succes");
                 
-                nbPairesTrouve ++;
+                nbPairesTrouve ++;  
                 verifPaires();
 
                 nbClick = 0 //On réinitialise le nombre de click    
@@ -73,26 +73,23 @@ let timer = tempsChronos = 1200;
 
 let chronos = setInterval(function(){
     timer--;
-    if(timer === 0) myStopFunction(); //Quand on arrive à 0, c'est que le temps est écoulé
+    if(timer === 0) verifPaires(); //Quand on arrive à 0, c'est que le temps est écoulé
     let widthProgressBar = timer*100/tempsChronos; //calcul pour trouver l'évolution de la barre de progression du chronos
     $('#chronos__progressbar').css('width', widthProgressBar + "%"); //barre du chronos qui défile
     
 },50)
 
 
-//Fonction pour stoper le chronos
-function myStopFunction() {
-    clearInterval(chronos);
-    verifPaires();
-}
+
 
 //Fonction pour vérifier si on a trouvé toutes les paires 
 function verifPaires(){
-    if(nbPairesTrouve === nbPaires){
-        myStopFunction();
+    if(nbPairesTrouve === nbPaires){ //cas ou on gagne
+        clearInterval(chronos);
         alert('BRAVO !')
-    } else {
+    } else if(timer === 0) { //cas ou on perd
         perdu = true;
         alert('Perdu !')
+        clearInterval(chronos);
     } 
 }

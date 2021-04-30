@@ -10,6 +10,8 @@ const express = require('express');
 const config = require('./src/config/config');
 //Bdd
 const Database = require('./src/database/database');
+//Fichiers de routage
+const Routes = require('./src/app-routing')
 
 class App {
     constructor() {
@@ -17,10 +19,10 @@ class App {
         this.database = new Database();
         this.database.connect();
         // this.database.saveData('test',55);
-        this.database.getData();
-        this.app.get('/', (req, res) => res.send('Hello, World!'))
         // this.m_routes = new AppRouting();
         // this.m_routes.routes(this.app);
+        this.app.use('/', Routes);
+
 
         
     }

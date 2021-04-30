@@ -5,7 +5,7 @@
  */
 const http = require('http');
 const app = require('./app');
-const config = require('./config/config');
+const config = require('./src/config/config');
 
 const server = http.createServer(app);
 

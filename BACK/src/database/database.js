@@ -6,7 +6,7 @@
  *  - la récupération de donnée
  */
 const mongoose = require("mongoose");
-const config = require("./config/config");
+const config = require("../config/config");
 const Resultats = require("./schemasData");
 
 class Database {

@@ -4,10 +4,10 @@
  *  - la déconnexion (non utilisé ici)
  *  - l'insertion de données
  *  - la récupération de donnée
+ * Pour les deux dernière fonction, j'ai fait le choix qu'elles soient générique, cela permet de pouvoir les réutiliser facilement si on souhaitais ajouter de nouvelles fonctionalités au back-end
  */
 const mongoose = require("mongoose");
 const config = require("../config/config");
-const Resultats = require("./schemasData");
 
 class Database {
     constructor() {
@@ -43,25 +43,14 @@ class Database {
     }
 
     //Fonction pour sauvegarder la donnée en bdd
-    saveData(pseudo, temps){
-        const data = new Resultats({
-            pseudo : pseudo,
-            temps : temps
-        });
-        data.save(function(err) {
-            if(!err){
-                console.log('Donnée insérer avec succès');
-            } else 
-            console.log(err);
-          });
+    saveData(data){
+       return data.save();
     }
 
     //Fonction pour récupérer la donnée
-    getData(){
-        const schemas = mongoose.model('Resultats'); //On récupère le model qui nous interesse
-        schemas.find({}, function(err, data){
-            console.log(data)
-        })
+    getData(schemasName){
+        const schemas = mongoose.model(schemasName); //On récupère le model qui nous interesse
+        return schemas.find().exec();
     }
 
 }

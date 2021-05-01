@@ -15,6 +15,7 @@ let carte2;
 //Quand on clique sur une carte
 $('.carte').on('click', (e) => {
     let carteParent = $(e.target).parent(); //recupération du parent (.carte)
+    console.log(perdu)
     $(carteParent).removeClass('rotate-verso');
     let carteListeEnfant = carteParent.children(); //recuparation des enfants recto & verso
     if(!$(carteParent).hasClass('rotate-recto') && nbClick < 2 && !perdu){ //On verifie que la carte n'a pas été retourné, qu'il n'y a pas 2 autres cartes de retourné sur le plateau et qu'on a pas perdu
@@ -23,6 +24,7 @@ $('.carte').on('click', (e) => {
         } else { //Sinon on affecte la carte 2
             carte2 = carteParent; 
         }
+        console.log('oiii')
 
         $(carteParent).addClass('rotate-recto');
 
@@ -45,6 +47,7 @@ $('.carte').on('click', (e) => {
                 
                 nbPairesTrouve ++;  
                 verifPaires();
+                enregistrerScore();
 
                 nbClick = 0 //On réinitialise le nombre de click    
             } else { //Les 2 cartes sont différentes
@@ -112,11 +115,34 @@ let chronos = setInterval(function(){
 function verifPaires(){
     if(nbPairesTrouve === nbPaires){ //cas ou on gagne
         clearInterval(chronos);
-        alert('BRAVO !');
         console.log(timer)
+        enregistrerScore();
     } else if(timer === 0) { //cas ou on perd
         perdu = true;
         alert('Perdu !')
         clearInterval(chronos);
     } 
+}
+
+
+function enregistrerScore(){
+
+    data = {
+        pseudo : "Test",
+        temps : timer,
+        difficulte : difficulte
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/",
+        data: data,
+        success: function(response){
+            console.log(response)
+        },
+        error : function(error){
+            console.log(error)
+        },
+        dataType: 'json',
+      })
 }

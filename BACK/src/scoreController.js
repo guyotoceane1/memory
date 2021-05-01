@@ -29,19 +29,29 @@ class ScoreController{
 
     //Enregistrement de nouvelles données
     async saveScore(req, res){
+        console.log(req.body)
         const data = new Resultats({
-            pseudo : req.Body.pseudo,
-            temps : req.Body.temps,
-            difficulte : req.Body.difficulte
+            pseudo : req.body.pseudo,
+            temps : req.body.temps,
+            difficulte : req.body.difficulte
         });
 
-        this.database.saveData(data).then(data=>{
-            console.log(data)
-            res.status(201).send('succes');
-        }).catch(error => {
+        let insert = await this.database.saveData(data)
+            // .then(data=>{
+            //     console.log(data)
+            //     res.send('succes');
+            // }).catch(error => {
+            //     console.log(error)
+            //     res.status(500).send(error);
+            // });
+
+        if(insert){
+            res.status(201).send({"etat" : "succes"});
+        } else {
             console.log(error)
             res.status(500).send(error);
-        });
+        }
+
 
     }
 

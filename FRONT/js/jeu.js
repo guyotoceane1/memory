@@ -105,7 +105,7 @@ let chronos = setInterval(function(){
 function verifPaires(){
     if(nbPairesTrouve === nbPaires){ //cas ou on gagne
         clearInterval(chronos);
-        console.log(timer)
+        console.log(timer);
         enregistrerScore();
     } else if(timer === 0) { //cas ou on perd
         perdu = true;
@@ -116,9 +116,19 @@ function verifPaires(){
 
 //requete ajax pour sauvegarder les scores
 function enregistrerScore(){
-    data = {
-        pseudo : "Test",
-        temps : timer,
+    let temps = (tempsParDefautEnMs - (timer * vitesseSetInterval)) / 1000;
+
+    //Par défaut, le pseudo est anonymous, mais si la personne à saisi son pseudo / qu'il est sauvegardé en localStorage, alors on utilise ce pseudo
+    let pseudo = "Anonymous";
+    if(localStorage.getItem("pseudo")){
+        pseudo = localStorage.getItem("pseudo");
+    }
+
+
+
+    let data = {
+        pseudo : pseudo,
+        temps : temps,
         difficulte : difficulte
     }
 

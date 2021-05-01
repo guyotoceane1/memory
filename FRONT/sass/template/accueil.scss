@@ -12,6 +12,13 @@
 
 #nouvPartie{
     width: 100%;
+    &__pseudo{
+        text-align: center;
+        margin-top: 15px;
+        input{
+            padding: 5px;
+        }
+    }
     &__difficulte{
         display: flex;
         flex-wrap: wrap;

@@ -232,6 +232,13 @@
 #nouvPartie {
   width: 100%;
 }
+#nouvPartie__pseudo {
+  text-align: center;
+  margin-top: 15px;
+}
+#nouvPartie__pseudo input {
+  padding: 5px;
+}
 #nouvPartie__difficulte {
   display: flex;
   flex-wrap: wrap;

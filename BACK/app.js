@@ -18,8 +18,6 @@ class App {
     constructor() {
         this.app = express();
         this.useBodyParser();
-        
-        
         this.app.use(cors()); //L'utilisation de cors permet d'accéder à de la donnéé tout en venant d'un autre domaine
         this.database = new Database();
         this.database.connect();

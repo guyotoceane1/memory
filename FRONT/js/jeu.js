@@ -1,6 +1,6 @@
 const getParameters = new URLSearchParams(window.location.search); //Objet qui va permettre de récupérer les paramètres de GET de l'url, notemment pour la difficulté
 
-ajuvar nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
+var nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
 
 var nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
 

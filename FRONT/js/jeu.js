@@ -1,15 +1,15 @@
 const getParameters = new URLSearchParams(window.location.search); //Objet qui va permettre de récupérer les paramètres de GET de l'url, notemment pour la difficulté
 
-let nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
+ajuvar nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
 
-let nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
+var nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
 
-let perdu = false;
+var perdu = false;
 
 const regex = /(carte-\d)/gm; //regex qui servira pour comparer les ids des cartes
 
-let carte1;
-let carte2;
+var carte1;
+var carte2;
 
 
 //Quand on clique sur une carte
@@ -24,40 +24,33 @@ $('.carte').on('click', (e) => {
         } else { //Sinon on affecte la carte 2
             carte2 = carteParent; 
         }
-        console.log('oiii')
 
-        $(carteParent).addClass('rotate-recto');
-
-        // $(carteListeEnfant[0]).hide();
-        // $(carteListeEnfant[1]).show();
+        $(carteParent).addClass('rotate-recto'); //rotation de la carte pour pouvoir la voir
         nbClick++;
 
-        if(nbClick == 2){
+        if(nbClick === 2){ //Quand on a 2 clics, c'est qu'on a retourné 2 cartes, c'est a ce moment là qu'on fait la comparaison
             let carte1Children = carte1.children();
             let carte2Children = carte2.children();
 
-            console.log(carte1Children)
-
-            //On ne recupère que les ids correspondant a la carte pour comparer les chiffres
+            //On ne recupère que les ids correspondant a la carte avec le fruit pour comparer les chiffres
             let idCarte1 = carte1Children[0].id.replace(regex, '');
             let idCarte2 = carte2Children[0].id.replace(regex, '');
 
             if(idCarte1 === idCarte2){ //Les 2 cartes sont égales
-                console.log("succes");
-                
                 nbPairesTrouve ++;  
-                verifPaires();
-                enregistrerScore();
-
-                nbClick = 0 //On réinitialise le nombre de click    
+                nbClick = 0 //On réinitialise le nombre de click pour pouvoir de nouveau retourner 2 nouvelles cartes
+                verifPaires(); //Pour vérifier si on a gagné ou perdu, dans le cas "neutre" / partie encore en cours il ne se passe rien et le jeu continue
+                enregistrerScore(); //TODO test pour dev à retirer
+  
             } else { //Les 2 cartes sont différentes
                 setTimeout(function(){
+                    //On remet les cartes face caché
                     carte1.removeClass('rotate-recto');
                     carte1.addClass('rotate-verso');
                     carte2.removeClass('rotate-recto');
                     carte2.addClass('rotate-verso');
                     nbClick = 0 //On réinitialise le nombre de click    
-                },1000)
+                },1000) //set Timout = le callback ne s'executeras qu'à la fin des 1s (1000ms), permet de laisser du temps au joueur de regarder ou se trouve les cartes.
             }
 
         }
@@ -95,9 +88,9 @@ switch(difficulte){
 
 }
 
-let vitesseSetTimout = 50;
+let vitesseSetInterval = 50; //Fréquence en ms à laquelle le setInterval va relancer la fonction en callback
 
-let timer = tempsChronos = tempsParDefautEnMs/vitesseSetTimout; 
+let timer = tempsChronos = tempsParDefautEnMs/vitesseSetInterval; 
 
 
 let chronos = setInterval(function(){
@@ -106,10 +99,7 @@ let chronos = setInterval(function(){
     let widthProgressBar = timer*100/tempsChronos; //calcul pour trouver l'évolution de la barre de progression du chronos
     $('#chronos__progressbar').css('width', widthProgressBar + "%"); //barre du chronos qui défile
     
-},vitesseSetTimout)
-
-
-
+},vitesseSetInterval)
 
 //Fonction pour vérifier si on a trouvé toutes les paires 
 function verifPaires(){
@@ -124,9 +114,8 @@ function verifPaires(){
     } 
 }
 
-
+//requete ajax pour sauvegarder les scores
 function enregistrerScore(){
-
     data = {
         pseudo : "Test",
         temps : timer,

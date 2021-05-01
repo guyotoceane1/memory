@@ -48,7 +48,7 @@ class Database {
     }
 
     //Fonction pour récupérer la donnée
-    getData(schemasName, orderBy=1){
+    getData(schemasName, orderBy=null){
         const schemas = mongoose.model(schemasName); //On récupère le model qui nous interesse
         return schemas.find().sort(orderBy).exec();
     }

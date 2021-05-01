@@ -20,7 +20,7 @@ class ScoreController{
 
     // Récupération des données
     async getScore(req, res){
-        this.database.getData('Resultats').then(data=>{
+        this.database.getData('Resultats', 'temps').then(data=>{
             res.status(200).json(data)
         });
 

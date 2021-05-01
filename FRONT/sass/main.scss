@@ -1,30 +1,9 @@
 @import 'config';
 @import 'generationCarte';
+@import 'template/accueil';
+@import 'template/jeu';
 
 body{
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-}
-
-#cartes{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.rotate-recto{
-    animation: rotation 0.3s forwards;
-}
-
-
-.rotate-verso{
-    animation: rotation2 0.3s forwards;
-}
-
-
-#chronos{
-    width: 100%;
-    &__progressbar{
-        height: 10px;
-        background-color: orange;
-    }
 }

@@ -227,6 +227,7 @@
   font-size: 30px;
   color: orangered;
   margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 #nouvPartie {
@@ -234,7 +235,6 @@
 }
 #nouvPartie__pseudo {
   text-align: center;
-  margin-top: 15px;
 }
 #nouvPartie__pseudo input {
   padding: 5px;
@@ -263,6 +263,26 @@
 }
 #nouvPartie__difficulte a:hover {
   background-color: orangered;
+}
+
+#score__tab {
+  display: flex;
+  justify-content: center;
+}
+#score__tab table {
+  border-spacing: 0;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+#score__tab table thead {
+  font-weight: bold;
+}
+#score__tab table thead td {
+  border-bottom: 2px solid black;
+}
+#score__tab table td {
+  padding: 10px 0;
 }
 
 /**

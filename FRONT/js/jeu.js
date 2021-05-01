@@ -1,4 +1,4 @@
-const getParameters = new URLSearchParams(window.location.search); //Fonction qui va permettre de récupérer les paramètres de GET de l'url, notemment pour la difficulté
+const getParameters = new URLSearchParams(window.location.search); //Objet qui va permettre de récupérer les paramètres de GET de l'url, notemment pour la difficulté
 
 let nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
 
@@ -64,31 +64,31 @@ $('.carte').on('click', (e) => {
 
 
 /** Génération du chronos **
-On va définit 2 variables qui ont la même valeur, 1 qui va se décrementer et une qui va servir de référence
+On va définir 2 variables qui ont la même valeur, 1 qui va se décrementer et une qui va servir de référence
 Pour un affichage fluide au niveau de la barre qui va servir de chronos, on va la faire évoluer toutes les 50ms
-Par défaut le temps d'une partie est de 120sec soit 120000ms, donc il faut diviser par 50 le temps en ms pour trouver le bon ratio
-=> 2400 * 50 = 120000
+Par défaut le temps d'une partie est de 180sec soit 180000ms, donc il faut diviser par 50 le temps en ms pour le setInterval (qui va permettre de diminuer le temps à un interval régulier)
+Mais, l'utilisateur à la possibilité sur la page d'accueil de choisir son niveau parmis 4
 **/
-
-console.log(getParameters.get('d'))
 
 let difficulte = getParameters.get('d');
 
-let tempsParDefautEnMs;;
+let tempsParDefautEnMs = 180000;
 
+//Affectation de la durée en ms en fonction de la difficulté
 switch(difficulte){
-    case 'fac':
+    case 'facile':
         tempsParDefautEnMs = 300000;
         break;
-    case 'mod':
+    case 'modere':
         tempsParDefautEnMs = 180000;
         break;
-    case 'dif':
+    case 'difficile':
         tempsParDefautEnMs = 120000;
         break;
-    case 'ext':
+    case 'extreme':
         tempsParDefautEnMs = 60000;
-        break;
+        break; 
+
 
 }
 

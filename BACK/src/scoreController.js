@@ -32,6 +32,7 @@ class ScoreController{
         const data = new Resultats({
             pseudo : req.Body.pseudo,
             temps : req.Body.temps,
+            difficulte : req.Body.difficulte
         });
 
         this.database.saveData(data).then(data=>{

@@ -1,3 +1,5 @@
+const getParameters = new URLSearchParams(window.location.search); //Fonction qui va permettre de récupérer les paramètres de GET de l'url, notemment pour la difficulté
+
 let nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
 
 let nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
@@ -8,8 +10,6 @@ const regex = /(carte-\d)/gm; //regex qui servira pour comparer les ids des cart
 
 let carte1;
 let carte2;
-
-console.log(nbPaires)
 
 
 //Quand on clique sur une carte
@@ -63,13 +63,39 @@ $('.carte').on('click', (e) => {
   });
 
 
-  /** Génération du chronos **
+/** Génération du chronos **
 On va définit 2 variables qui ont la même valeur, 1 qui va se décrementer et une qui va servir de référence
 Pour un affichage fluide au niveau de la barre qui va servir de chronos, on va la faire évoluer toutes les 50ms
-Par défaut le temps d'une partie est de 60sec soit 60000ms, donc il faut diviser par 50 le temps en ms pour trouver le bon ratio
-=> 1200 * 50 = 60000
+Par défaut le temps d'une partie est de 120sec soit 120000ms, donc il faut diviser par 50 le temps en ms pour trouver le bon ratio
+=> 2400 * 50 = 120000
 **/
-let timer = tempsChronos = 1200; 
+
+console.log(getParameters.get('d'))
+
+let difficulte = getParameters.get('d');
+
+let tempsParDefautEnMs;;
+
+switch(difficulte){
+    case 'fac':
+        tempsParDefautEnMs = 300000;
+        break;
+    case 'mod':
+        tempsParDefautEnMs = 180000;
+        break;
+    case 'dif':
+        tempsParDefautEnMs = 120000;
+        break;
+    case 'ext':
+        tempsParDefautEnMs = 60000;
+        break;
+
+}
+
+let vitesseSetTimout = 50;
+
+let timer = tempsChronos = tempsParDefautEnMs/vitesseSetTimout; 
+
 
 let chronos = setInterval(function(){
     timer--;
@@ -77,7 +103,7 @@ let chronos = setInterval(function(){
     let widthProgressBar = timer*100/tempsChronos; //calcul pour trouver l'évolution de la barre de progression du chronos
     $('#chronos__progressbar').css('width', widthProgressBar + "%"); //barre du chronos qui défile
     
-},50)
+},vitesseSetTimout)
 
 
 
@@ -86,7 +112,8 @@ let chronos = setInterval(function(){
 function verifPaires(){
     if(nbPairesTrouve === nbPaires){ //cas ou on gagne
         clearInterval(chronos);
-        alert('BRAVO !')
+        alert('BRAVO !');
+        console.log(timer)
     } else if(timer === 0) { //cas ou on perd
         perdu = true;
         alert('Perdu !')

@@ -1,6 +1,11 @@
 @import 'config';
 @import 'generationCarte';
 
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+
 #cartes{
     display: flex;
     flex-wrap: wrap;

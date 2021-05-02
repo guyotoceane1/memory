@@ -14,6 +14,7 @@ class Database {
         this.mysql = mysql;
         this.config = config;
         this.pool = this.connect();
+        this.promisePool = this.pool.promise(); //Permettre d'éxécuter les requêtes en asynchrone
     }
 
     //Connexion à la base de données, on choisit d'utiliser Pool car il permet de réduire le temps de connexion en utilisant une précédente connexion
@@ -40,12 +41,12 @@ class Database {
     }
 
     //Fonction pour récupérer la donnée
-    async query(sql, param=null){
+    async query(sql, inserts=null){
         // if(param){
 
         // }
         try {
-            const [ROWS, FIELDS] = await this.pool.execute(sql, inserts);
+            const [ROWS, FIELDS] = await this.promisePool.execute(sql, inserts);
             return ROWS;
         } catch (error) {
             throw(error);

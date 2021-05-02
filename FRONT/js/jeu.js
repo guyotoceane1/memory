@@ -4,6 +4,7 @@ class Jeu{
 
     constructor(difficulte){
         this.nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
+        this.nbPaires = 18; //nombre de paires à trouver
         this.nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
         this.difficulte = difficulte; //Récupération de la difficulté choisis sur la page d'accueil
         this.perdu = false;
@@ -62,9 +63,9 @@ class Jeu{
                     this.nbClick = 0 //On réinitialise le nombre de click pour pouvoir de nouveau retourner 2 nouvelles cartes
                     this.verifPaires(); //Pour vérifier si on a gagné ou perdu, dans le cas "neutre" / partie encore en cours il ne se passe rien et le jeu continue
                     
-                    //TODO test pour dev à retirer
-                    $('#gagne').addClass('afficherMessageFinal');
-                    this.enregistrerScore(); 
+                    // //TODO test pour dev à retirer
+                    // $('#gagne').addClass('afficherMessageFinal');
+                    // this.enregistrerScore(); 
     
                 } else { //Les 2 cartes sont différentes
                     let that = this; //Création d'un alias de this puisque dans l'utilisation du settimour, this sera redéfini et on aura plus accès au this de la class

@@ -40,7 +40,10 @@ $('.carte').on('click', (e) => {
                 nbPairesTrouve ++;  
                 nbClick = 0 //On réinitialise le nombre de click pour pouvoir de nouveau retourner 2 nouvelles cartes
                 verifPaires(); //Pour vérifier si on a gagné ou perdu, dans le cas "neutre" / partie encore en cours il ne se passe rien et le jeu continue
-                enregistrerScore(); //TODO test pour dev à retirer
+                
+                //TODO test pour dev à retirer
+                $('#gagne').addClass('afficherMessageFinal');
+                enregistrerScore(); 
   
             } else { //Les 2 cartes sont différentes
                 setTimeout(function(){
@@ -105,13 +108,19 @@ let chronos = setInterval(function(){
 function verifPaires(){
     if(nbPairesTrouve === nbPaires){ //cas ou on gagne
         clearInterval(chronos);
-        console.log(timer);
+        $('#gagne').addClass('afficherMessageFinal');
         enregistrerScore();
     } else if(timer === 0) { //cas ou on perd
         perdu = true;
-        alert('Perdu !')
+        $('#perdu').addClass('afficherMessageFinal');
         clearInterval(chronos);
     } 
+
+    setTimeout(function(){
+        window.location.href = "index.html"
+
+    }, 1500)
+
 }
 
 //requete ajax pour sauvegarder les scores

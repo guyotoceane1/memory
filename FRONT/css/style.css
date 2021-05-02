@@ -18,191 +18,600 @@
     transform: rotate3d(0);
   }
 }
+@keyframes animMessageFinal {
+  0% {
+    opacity: 0;
+    font-size: 0vw;
+  }
+  70% {
+    font-size: 25vw;
+  }
+  100% {
+    opacity: 1;
+    font-size: 22vw;
+  }
+}
 #carte-11 {
   background-image: url("../images/cartes.png");
   background-position: 0 100px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-11 {
+    background-position: 0 75px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-11 {
+    background-position: 0 50px;
+  }
 }
 
 #carte-21 {
   background-image: url("../images/cartes.png");
   background-position: 0 100px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-21 {
+    background-position: 0 75px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-21 {
+    background-position: 0 50px;
+  }
 }
 
 #carte-12 {
   background-image: url("../images/cartes.png");
   background-position: 0 200px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-12 {
+    background-position: 0 150px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-12 {
+    background-position: 0 100px;
+  }
 }
 
 #carte-22 {
   background-image: url("../images/cartes.png");
   background-position: 0 200px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-22 {
+    background-position: 0 150px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-22 {
+    background-position: 0 100px;
+  }
 }
 
 #carte-13 {
   background-image: url("../images/cartes.png");
   background-position: 0 300px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-13 {
+    background-position: 0 225px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-13 {
+    background-position: 0 150px;
+  }
 }
 
 #carte-23 {
   background-image: url("../images/cartes.png");
   background-position: 0 300px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-23 {
+    background-position: 0 225px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-23 {
+    background-position: 0 150px;
+  }
 }
 
 #carte-14 {
   background-image: url("../images/cartes.png");
   background-position: 0 400px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-14 {
+    background-position: 0 300px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-14 {
+    background-position: 0 200px;
+  }
 }
 
 #carte-24 {
   background-image: url("../images/cartes.png");
   background-position: 0 400px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-24 {
+    background-position: 0 300px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-24 {
+    background-position: 0 200px;
+  }
 }
 
 #carte-15 {
   background-image: url("../images/cartes.png");
   background-position: 0 500px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-15 {
+    background-position: 0 375px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-15 {
+    background-position: 0 250px;
+  }
 }
 
 #carte-25 {
   background-image: url("../images/cartes.png");
   background-position: 0 500px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-25 {
+    background-position: 0 375px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-25 {
+    background-position: 0 250px;
+  }
 }
 
 #carte-16 {
   background-image: url("../images/cartes.png");
   background-position: 0 600px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-16 {
+    background-position: 0 450px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-16 {
+    background-position: 0 300px;
+  }
 }
 
 #carte-26 {
   background-image: url("../images/cartes.png");
   background-position: 0 600px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-26 {
+    background-position: 0 450px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-26 {
+    background-position: 0 300px;
+  }
 }
 
 #carte-17 {
   background-image: url("../images/cartes.png");
   background-position: 0 700px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-17 {
+    background-position: 0 525px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-17 {
+    background-position: 0 350px;
+  }
 }
 
 #carte-27 {
   background-image: url("../images/cartes.png");
   background-position: 0 700px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-27 {
+    background-position: 0 525px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-27 {
+    background-position: 0 350px;
+  }
 }
 
 #carte-18 {
   background-image: url("../images/cartes.png");
   background-position: 0 800px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-18 {
+    background-position: 0 600px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-18 {
+    background-position: 0 400px;
+  }
 }
 
 #carte-28 {
   background-image: url("../images/cartes.png");
   background-position: 0 800px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-28 {
+    background-position: 0 600px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-28 {
+    background-position: 0 400px;
+  }
 }
 
 #carte-19 {
   background-image: url("../images/cartes.png");
   background-position: 0 900px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-19 {
+    background-position: 0 675px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-19 {
+    background-position: 0 450px;
+  }
 }
 
 #carte-29 {
   background-image: url("../images/cartes.png");
   background-position: 0 900px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-29 {
+    background-position: 0 675px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-29 {
+    background-position: 0 450px;
+  }
 }
 
 #carte-110 {
   background-image: url("../images/cartes.png");
   background-position: 0 1000px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-110 {
+    background-position: 0 750px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-110 {
+    background-position: 0 500px;
+  }
 }
 
 #carte-210 {
   background-image: url("../images/cartes.png");
   background-position: 0 1000px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-210 {
+    background-position: 0 750px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-210 {
+    background-position: 0 500px;
+  }
 }
 
 #carte-111 {
   background-image: url("../images/cartes.png");
   background-position: 0 1100px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-111 {
+    background-position: 0 825px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-111 {
+    background-position: 0 550px;
+  }
 }
 
 #carte-211 {
   background-image: url("../images/cartes.png");
   background-position: 0 1100px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-211 {
+    background-position: 0 825px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-211 {
+    background-position: 0 550px;
+  }
 }
 
 #carte-112 {
   background-image: url("../images/cartes.png");
   background-position: 0 1200px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-112 {
+    background-position: 0 900px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-112 {
+    background-position: 0 600px;
+  }
 }
 
 #carte-212 {
   background-image: url("../images/cartes.png");
   background-position: 0 1200px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-212 {
+    background-position: 0 900px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-212 {
+    background-position: 0 600px;
+  }
 }
 
 #carte-113 {
   background-image: url("../images/cartes.png");
   background-position: 0 1300px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-113 {
+    background-position: 0 975px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-113 {
+    background-position: 0 650px;
+  }
 }
 
 #carte-213 {
   background-image: url("../images/cartes.png");
   background-position: 0 1300px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-213 {
+    background-position: 0 975px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-213 {
+    background-position: 0 650px;
+  }
 }
 
 #carte-114 {
   background-image: url("../images/cartes.png");
   background-position: 0 1400px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-114 {
+    background-position: 0 1050px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-114 {
+    background-position: 0 700px;
+  }
 }
 
 #carte-214 {
   background-image: url("../images/cartes.png");
   background-position: 0 1400px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-214 {
+    background-position: 0 1050px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-214 {
+    background-position: 0 700px;
+  }
 }
 
 #carte-115 {
   background-image: url("../images/cartes.png");
   background-position: 0 1500px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-115 {
+    background-position: 0 1125px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-115 {
+    background-position: 0 750px;
+  }
 }
 
 #carte-215 {
   background-image: url("../images/cartes.png");
   background-position: 0 1500px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-215 {
+    background-position: 0 1125px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-215 {
+    background-position: 0 750px;
+  }
 }
 
 #carte-116 {
   background-image: url("../images/cartes.png");
   background-position: 0 1600px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-116 {
+    background-position: 0 1200px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-116 {
+    background-position: 0 800px;
+  }
 }
 
 #carte-216 {
   background-image: url("../images/cartes.png");
   background-position: 0 1600px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-216 {
+    background-position: 0 1200px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-216 {
+    background-position: 0 800px;
+  }
 }
 
 #carte-117 {
   background-image: url("../images/cartes.png");
   background-position: 0 1700px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-117 {
+    background-position: 0 1275px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-117 {
+    background-position: 0 850px;
+  }
 }
 
 #carte-217 {
   background-image: url("../images/cartes.png");
   background-position: 0 1700px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-217 {
+    background-position: 0 1275px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-217 {
+    background-position: 0 850px;
+  }
 }
 
 #carte-118 {
   background-image: url("../images/cartes.png");
   background-position: 0 1800px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-118 {
+    background-position: 0 1350px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-118 {
+    background-position: 0 900px;
+  }
 }
 
 #carte-218 {
   background-image: url("../images/cartes.png");
   background-position: 0 1800px;
+  background-size: 100%;
+}
+@media (max-width: 710px) {
+  #carte-218 {
+    background-position: 0 1350px;
+  }
+}
+@media (max-width: 550px) {
+  #carte-218 {
+    background-position: 0 900px;
+  }
 }
 
 .carte {
-  width: 100px;
-  height: 100px;
-  margin: 15px;
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.25);
 }
 .carte-recto {
   background-color: orange;
@@ -288,23 +697,73 @@
 /**
 * Template pour la page jeu
 **/
-#cartes {
+#mainJeu {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
 }
-#cartes .rotate-recto {
+#mainJeu #cartes {
+  display: grid;
+  grid-template-columns: repeat(9, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin: 15px;
+  width: max-content;
+}
+@media (max-width: 1060px) {
+  #mainJeu #cartes {
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+  }
+}
+@media (max-width: 710px) {
+  #mainJeu #cartes {
+    grid-template-columns: repeat(6, 75px);
+    grid-template-rows: repeat(6, 75px);
+  }
+}
+@media (max-width: 550px) {
+  #mainJeu #cartes {
+    grid-template-columns: repeat(6, 50px);
+    grid-template-rows: repeat(6, 50px);
+  }
+}
+#mainJeu #cartes .rotate-recto {
   animation: rotation 0.3s forwards;
 }
-#cartes .rotate-verso {
+#mainJeu #cartes .rotate-verso {
   animation: rotation2 0.3s forwards;
 }
-
-#chronos {
+#mainJeu #chronos {
   width: 100%;
 }
-#chronos__progressbar {
+#mainJeu #chronos__progressbar {
   height: 10px;
   background-color: orange;
+}
+
+.messageFinal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 25, 25, 0.7);
+  color: orangered;
+  font-size: 22vw;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: "Abril Fatface", cursive;
+  color: wheat;
+}
+
+.afficherMessageFinal {
+  display: flex;
+  animation: animMessageFinal 0.5s ease-out forwards;
 }
 
 body {
@@ -312,6 +771,10 @@ body {
   font-weight: 100;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 header {
@@ -325,6 +788,7 @@ header {
   flex-wrap: wrap;
   font-size: 60px;
   color: orange;
+  text-decoration: none;
 }
 header span {
   font-size: 16px;

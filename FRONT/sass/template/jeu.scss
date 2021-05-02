@@ -11,6 +11,8 @@
         .rotate-verso{
             animation: rotation2 0.3s forwards;
         }
+
+        
     
 }
 
@@ -43,18 +45,4 @@
     display: flex;
     animation: animMessageFinal 0.5s ease-out forwards;
     
-}
-
-@keyframes animMessageFinal {
-    0%{
-        opacity: 0;
-        font-size: 0vw;
-    }
-    70%{
-        font-size: 25vw;
-    }
-    100%{
-        opacity: 1;
-        font-size: 22vw;
-    }
 }

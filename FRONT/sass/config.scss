@@ -25,3 +25,18 @@
     }
 }
 
+@keyframes animMessageFinal {
+    0%{
+        opacity: 0;
+        font-size: 0vw;
+    }
+    70%{
+        font-size: 25vw;
+    }
+    100%{
+        opacity: 1;
+        font-size: 22vw;
+    }
+}
+
+

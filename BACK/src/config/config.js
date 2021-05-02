@@ -16,10 +16,10 @@
 
 const config = {
     db : {
-        username : "root",
+        username : "oguyot",
         pwd : "QETwNlYXzrmWTMmH",
-        database : "memory",
-        host : "memory.mrvjd.mongodb.net",
+        database : "oguyot_memory",
+        host : "mysql-oguyot.alwaysdata.net",
     },
     port : 3000
 }

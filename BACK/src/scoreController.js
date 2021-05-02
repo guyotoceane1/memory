@@ -30,13 +30,12 @@ class ScoreController{
     //Enregistrement de nouvelles données
     async saveScore(req, res){
         console.log(req.body)
-        const data = new Resultats({
-            pseudo : req.body.pseudo,
-            temps : req.body.temps,
-            difficulte : req.body.difficulte
-        });
+        const data = [req.body.pseudo, req.body.temps,req.body.difficulte]
 
-        let insert = await this.database.saveData(data)
+        let SQL = "INSERT INTO resultats (pseudo, temps, difficulte) VALUES (?,?,?)"
+            
+
+        let insert = await this.database.query(SQL, data)
             // .then(data=>{
             //     console.log(data)
             //     res.send('succes');

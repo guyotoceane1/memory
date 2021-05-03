@@ -1,4 +1,4 @@
-//Le but ici est d'afficher les cartes dans la même logique que la génération du css
+//Le but ici est d'afficher les cartes dans la même logique que la génération du sass
 
 var nbPaires = 18;
 var divAffichageCarte = $('#cartes');
@@ -25,7 +25,6 @@ tabData.forEach(data=>{
     let $divPhoto = document.createElement('div');
     $divPhoto.id = data;
     $($divPhoto).addClass('carte-verso');
-    // $($divPhoto).hide(); //Par défaut la carte est caché
 
     // On ajoute les 2 cartes a la div commune
     $($cubeCarte).append($divPhoto);
@@ -34,9 +33,6 @@ tabData.forEach(data=>{
     $container.append($cubeCarte); //On affecte le container a la div parent dans le HTML
     divAffichageCarte.append($container); //On affecte le container a la div parent dans le HTML
 })
-
-
-
 
 //Fonction pour mélanger un tableau
 function shuffle(array) {

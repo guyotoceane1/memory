@@ -1,10 +1,10 @@
 /**
- * Class pour gérer la base de donnée,elle contient différentes fonction :
+ * Class pour gérer la base de données, elle contient différentes fonction :
  *  - la connexion à la bdd
  *  - la déconnexion (non utilisé ici)
  *  - l'insertion de données
  *  - la récupération de donnée
- * Pour les deux dernière fonction, j'ai fait le choix qu'elles soient générique, cela permet de pouvoir les réutiliser facilement si on souhaitais ajouter de nouvelles fonctionalités au back-end
+ * Pour les deux dernières fonction, j'ai fait le choix qu'elles soient générique, cela permet de pouvoir les réutiliser facilement si on souhaitais ajouter de nouvelles fonctionalités au back-end
  */
 const mongoose = require("mongoose");
 const config = require("../config/config");

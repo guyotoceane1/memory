@@ -23,8 +23,6 @@ class ScoreController{
         this.database.getData('Resultats', 'temps').then(data=>{
             res.status(200).json(data)
         });
-
-        // return this.database.getData();
     }
 
     //Enregistrement de nouvelles données
@@ -36,26 +34,14 @@ class ScoreController{
             difficulte : req.body.difficulte
         });
 
-        let insert = await this.database.saveData(data)
-            // .then(data=>{
-            //     console.log(data)
-            //     res.send('succes');
-            // }).catch(error => {
-            //     console.log(error)
-            //     res.status(500).send(error);
-            // });
-
+        let insert = await this.database.saveData(data);
         if(insert){
             res.status(201).send({"etat" : "succes"});
         } else {
             console.log(error)
             res.status(500).send(error);
         }
-
-
     }
 
 }
-
-
 module.exports = ScoreController;

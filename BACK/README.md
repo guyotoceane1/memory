@@ -9,3 +9,5 @@ Au niveau de la base de donnée, le choix c'est porté sur MongoDb avec l'utilis
 ## Initialisation du projet
 Toutes les librairies ont été installées grâce à npm. Afin de pouvoir y accéder dans le projet exécuter la commande suivante dans un terminal : 
 `npm i`
+
+Le projet fonctionne nodemon (ce qui permet une recomplilation en live quand on développe). Pour lancer le projet, il suffit de lancer la commande `npm run dev`

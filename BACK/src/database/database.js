@@ -21,7 +21,6 @@ class Database {
         let dbPass = encodeURIComponent(this.config.db.pwd);
         let dbHost = this.config.db.host;
         let dbDatabase = this.config.db.database;
-
         let mongoUrl = `mongodb+srv://${dbUser}:${dbPass}@${dbHost}/${dbDatabase}?retryWrites=true&w=majority`;
         this.mongoose.connect(mongoUrl,
         { useNewUrlParser: true,
@@ -37,7 +36,6 @@ class Database {
                 console.error(error);
                 return false;
             }
-
             return true;
         });
     }

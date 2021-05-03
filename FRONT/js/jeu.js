@@ -1,7 +1,6 @@
 const regex = /(carte-\d)/gm; //regex qui servira pour comparer les ids des cartes
 
 class Jeu{
-
     constructor(difficulte){
         this.nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
         this.nbPaires = 18; //nombre de paires à trouver
@@ -15,7 +14,6 @@ class Jeu{
         this.tempsParDefautEnMs = this.determineTempsChronos(); 
         this.timer = this.tempsChronos = this.tempsParDefautEnMs/this.vitesseSetInterval;  //On définit 2 variables égales avec le temps du chronos en ms / par la vitesse que l'on a choisi pour le set interval. On en a 2, car une va être décrémenté dans le setInterval et l'autre va nous servir de valeur de référence.
     }
-
 
     //Détermination du temps du chronos en fonction de la difficulté choisis. Le temps est exprimé en ms
     determineTempsChronos(){
@@ -36,7 +34,6 @@ class Jeu{
         }
         return tempsParDefautEnMs
     }
-
 
     //Ce que l'on va faire lorsque on clique sur une carte
     selectionCarte(carteParent){
@@ -62,11 +59,6 @@ class Jeu{
                     this.nbPairesTrouve ++;  
                     this.nbClick = 0 //On réinitialise le nombre de click pour pouvoir de nouveau retourner 2 nouvelles cartes
                     this.verifPaires(); //Pour vérifier si on a gagné ou perdu, dans le cas "neutre" / partie encore en cours il ne se passe rien et le jeu continue
-                    
-                    // //TODO test pour dev à retirer
-                    // $('#gagne').addClass('afficherMessageFinal');
-                    // this.enregistrerScore(); 
-    
                 } else { //Les 2 cartes sont différentes
                     let that = this; //Création d'un alias de this puisque dans l'utilisation du settimour, this sera redéfini et on aura plus accès au this de la class
                     setTimeout(function(){
@@ -78,7 +70,6 @@ class Jeu{
                         that.nbClick = 0 //On réinitialise le nombre de click    
                     },1000) //set Timout = le callback ne s'executeras qu'à la fin des 1s (1000ms), permet de laisser du temps au joueur de regarder ou se trouve les cartes.
                 }
-
             } 
         }
     }
@@ -92,7 +83,6 @@ class Jeu{
             let widthProgressBar = that.timer*100/that.tempsChronos; //calcul pour trouver l'évolution de la barre de progression du chronos
             $('#chronos__progressbar').css('width', widthProgressBar + "%"); //barre du chronos qui défile
         },this.vitesseSetInterval)
-
     }
 
     //Fonction pour vérifier si on a trouvé toutes les paires 
@@ -108,7 +98,6 @@ class Jeu{
         } else {
             return true;
         }
-
         setTimeout(function(){
             window.location.href = "index.html"
 

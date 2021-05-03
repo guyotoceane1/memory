@@ -19,9 +19,7 @@ class ScoreController{
     // Récupération des données
     async getScore(req, res){
         let SQL = "SELECT * FROM resultats ORDER BY temps";
-            
         let getData = await this.database.query(SQL);
-
         if(getData){
             res.status(200).send(getData);
         } else {
@@ -33,23 +31,14 @@ class ScoreController{
     //Enregistrement de nouvelles données
     async saveScore(req, res){
         const data = [req.body.pseudo, req.body.temps,req.body.difficulte];
-
         let SQL = "INSERT INTO resultats (pseudo, temps, difficulte) VALUES (?,?,?)";
-            
-
         let insert = await this.database.query(SQL, data);
-        
         if(insert){
             res.status(201).send({"etat" : "succes"});
         } else {
-            console.log(error)
             res.status(500).send(error);
         }
-
-
     }
-
 }
-
 
 module.exports = ScoreController;

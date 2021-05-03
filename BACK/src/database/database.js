@@ -41,18 +41,12 @@ class Database {
     }
 
     //Fonction pour récupérer la donnée
-    async query(sql, inserts=null){
-        // if(param){
-
-        // }
-        try {
+    async query(sql, inserts=null){try {
             const [ROWS, FIELDS] = await this.promisePool.execute(sql, inserts);
             return ROWS;
         } catch (error) {
             throw(error);
         }
-
-
     }
 
 }

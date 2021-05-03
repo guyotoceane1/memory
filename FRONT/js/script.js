@@ -12,8 +12,6 @@ if(localStorage.getItem("pseudo")){
     $('#pseudo').val(localStorage.getItem("pseudo"));
 }
 
-
-
 $.ajax({
     type: "GET",
     url: "http://localhost:3000/",
@@ -26,31 +24,30 @@ $.ajax({
     dataType: 'json',
   })
   
+function traitementData(data){
+    let i=1;
+    data.forEach(element => {
+        console.log(element)
+        let $tr = document.createElement('tr');
+        
+        $tr.appendChild(createTD(i));
+        $tr.appendChild(createTD(element.pseudo));
+        $tr.appendChild(createTD(element.temps));
+        $tr.appendChild(createTD(element.difficulte));
 
-  function traitementData(data){
-      let i=1;
-      data.forEach(element => {
-          console.log(element)
-          let $tr = document.createElement('tr');
-          
-          $tr.appendChild(createTD(i));
-          $tr.appendChild(createTD(element.pseudo));
-          $tr.appendChild(createTD(element.temps));
-          $tr.appendChild(createTD(element.difficulte));
+        if(i%2 !== 0){
+        $($tr).css("background-color","orange");
+        $($tr).css("color","white");
+        }
 
-          if(i%2 !== 0){
-            $($tr).css("background-color","orange");
-            $($tr).css("color","white");
-          }
+        $('#tbodyScore').append($tr);
 
-          $('#tbodyScore').append($tr);
+        i++;
+    });
+}
 
-          i++;
-      });
-  }
-
-  function createTD(value){
+function createTD(value){
     let $td = document.createElement('td');
     $td.appendChild(document.createTextNode(value));
     return $td;
-  }
+}

@@ -13,11 +13,7 @@ tabData = shuffle(tabData); //On randomise les ids pour pouvoir les "mélanger" 
 
 //On boucle sur le tableau pour afficher les cartes
 tabData.forEach(data=>{
-
-
     let $container = document.createElement('div'); //Container qui va contenir un cube pour permettre une rotation des cartes visuellement
-
-
     let $cubeCarte = document.createElement('div'); //parent qui va contenir le recto et le verso
     $($cubeCarte).addClass('carte')
 

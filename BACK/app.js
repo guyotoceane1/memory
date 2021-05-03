@@ -22,7 +22,6 @@ class App {
         this.database = new Database();
         this.database.connect();
         this.app.use('/', Routes);
-        
     }
 
     //cette fonction va permettre de lire les données en entrée et va les stoquer dans les infos de la requete http req.body

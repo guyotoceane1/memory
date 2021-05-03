@@ -6,7 +6,7 @@ $('#pseudo').focusout(function(){
     } 
 })
 
-//Si il y a un pseudo sauvegarder en localStorage, on prérempli le input du pseudo
+//Si il y a un pseudo sauvegardé en localStorage, on prérempli le input du pseudo
 if(localStorage.getItem("pseudo")){
     console.log("ici")
     $('#pseudo').val(localStorage.getItem("pseudo"));

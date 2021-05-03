@@ -11,7 +11,7 @@ cors = require('cors');
 const config = require('./src/config/config');
 //Bdd
 const Database = require('./src/database/database');
-//Fichiers de routage
+//Fichier de routage
 const Routes = require('./src/app-routing')
 
 class App {

@@ -2,9 +2,7 @@
  * Class pour gérer la base de donnée,elle contient différentes fonction :
  *  - la connexion à la bdd
  *  - la déconnexion (non utilisé ici)
- *  - l'insertion de données
- *  - la récupération de donnée
- * Pour les deux dernière fonction, j'ai fait le choix qu'elles soient générique, cela permet de pouvoir les réutiliser facilement si on souhaitais ajouter de nouvelles fonctionalités au back-end
+ *  - les requêtes a la base de données
  */
  var mysql = require('mysql2');
 const config = require("../config/config");
@@ -40,7 +38,7 @@ class Database {
         this.pool.end();
     }
 
-    //Fonction pour récupérer la donnée
+    //Fonction pour faire des requêtes à la bdd
     async query(sql, inserts=null){try {
             const [ROWS, FIELDS] = await this.promisePool.execute(sql, inserts);
             return ROWS;

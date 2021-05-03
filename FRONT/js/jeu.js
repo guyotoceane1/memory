@@ -5,17 +5,17 @@ class Jeu{
         this.nbClick = 0; //On initialise le nombre de click pour pouvoir limiter la vue à 2 cartes
         this.nbPaires = 18; //nombre de paires à trouver
         this.nbPairesTrouve = 0; //variable pour le nombre de paires que l'on a trouvé
-        this.difficulte = difficulte; //Récupération de la difficulté choisis sur la page d'accueil
+        this.difficulte = difficulte; //Récupération de la difficulté choisie sur la page d'accueil
         this.perdu = false;
         this.carte1; 
         this.carte2;
         this.chronos;
         this.vitesseSetInterval = 50; //Fréquence en ms à laquelle le setInterval va relancer la fonction en callback
         this.tempsParDefautEnMs = this.determineTempsChronos(); 
-        this.timer = this.tempsChronos = this.tempsParDefautEnMs/this.vitesseSetInterval;  //On définit 2 variables égales avec le temps du chronos en ms / par la vitesse que l'on a choisi pour le set interval. On en a 2, car une va être décrémenté dans le setInterval et l'autre va nous servir de valeur de référence.
+        this.timer = this.tempsChronos = this.tempsParDefautEnMs/this.vitesseSetInterval;  //On définit 2 variables égales avec le temps du chronos en ms / par la vitesse que l'on a choisi pour le set interval. On en a 2, car une va être décrémentée dans le setInterval et l'autre va nous servir de valeur de référence.
     }
 
-    //Détermination du temps du chronos en fonction de la difficulté choisis. Le temps est exprimé en ms
+    //Détermination du temps du chronos en fonction de la difficulté choisie. Le temps est exprimé en ms
     determineTempsChronos(){
         let tempsParDefautEnMs = 180000;
         switch(this.difficulte){
@@ -37,7 +37,7 @@ class Jeu{
 
     //Ce que l'on va faire lorsque on clique sur une carte
     selectionCarte(carteParent){
-        if(!$(carteParent).hasClass('rotate-recto') && this.nbClick < 2 && !this.perdu){ //On verifie que la carte n'a pas été retourné, qu'il n'y a pas 2 autres cartes de retourné sur le plateau et qu'on a pas perdu
+        if(!$(carteParent).hasClass('rotate-recto') && this.nbClick < 2 && !this.perdu){ //On verifie que la carte n'a pas été retournée, qu'il n'y a pas 2 autres cartes de retournées sur le plateau et qu'on a pas perdu
             if(this.nbClick === 0){ //Si on a pas encore cliqué on affecte à la carte 1
                 this.carte1 = carteParent; 
             } else { //Sinon on affecte la carte 2
@@ -62,19 +62,19 @@ class Jeu{
                 } else { //Les 2 cartes sont différentes
                     let that = this; //Création d'un alias de this puisque dans l'utilisation du settimour, this sera redéfini et on aura plus accès au this de la class
                     setTimeout(function(){
-                        //On remet les cartes face caché
+                        //On remet les cartes face cachée
                         that.carte1.removeClass('rotate-recto');
                         that.carte1.addClass('rotate-verso');
                         that.carte2.removeClass('rotate-recto');
                         that.carte2.addClass('rotate-verso');
                         that.nbClick = 0 //On réinitialise le nombre de click    
-                    },1000) //set Timout = le callback ne s'executeras qu'à la fin des 1s (1000ms), permet de laisser du temps au joueur de regarder ou se trouve les cartes.
+                    },1000) //set Timout = le callback ne s'executeras qu'à la fin des 1s (1000ms), permet de laisser du temps au joueur de regarder où se trouve les cartes.
                 }
             } 
         }
     }
 
-    //Fonction pour le chronos. Pour cela on va utiliser un setInterval, qui va exécuter une fonction toux les x temps.
+    //Fonction pour le chronos. Pour cela on va utiliser un setInterval, qui va exécuter une fonction tous les x temps.
     startChronos(){
         let that = this;
         this.chronos = setInterval(function(){
@@ -92,7 +92,7 @@ class Jeu{
             $('#gagne').addClass('afficherMessageFinal');
             this.enregistrerScore();
         } else if(this.timer === 0) { //cas ou on perd
-            this.perdu = true; // On dit que l'on a pas perdu pour pouvoir bloqué le jeu au moment où l'on retourne les cartes
+            this.perdu = true; // On dit que l'on a perdu pour pouvoir bloquer le jeu au moment où l'on retourne les cartes
             clearInterval(this.chronos); //On arrête le chronos
             $('#perdu').addClass('afficherMessageFinal');
         } else {
